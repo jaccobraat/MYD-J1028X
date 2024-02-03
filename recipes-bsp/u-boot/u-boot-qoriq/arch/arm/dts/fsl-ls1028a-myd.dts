@@ -1,0 +1,211 @@
+// SPDX-License-Identifier: GPL-2.0+ OR X11
+/*
+ * NXP ls1028ARDB device tree source
+ *
+ * Copyright 2019 NXP
+ *
+ */
+
+/dts-v1/;
+
+#include "fsl-ls1028a.dtsi"
+
+/ {
+	model = "MYIR MYD-JLS1028 Development Board";
+	compatible = "fsl,ls1028a-rdb", "fsl,ls1028a";
+	aliases {
+   		crypto = &crypto;
+		serial0 = &duart0;
+		serial1 = &duart1;
+		mmc0 = &esdhc;
+		mmc1 = &esdhc1;
+		rtc1 = &ftm_alarm0;
+		spi0 = &fspi;
+		ethernet0 = &enetc_port0;
+		ethernet1 = &enetc_port2;
+		ethernet2 = &mscc_felix_port0;
+		ethernet3 = &mscc_felix_port1;
+		ethernet4 = &mscc_felix_port2;
+		ethernet5 = &mscc_felix_port3;
+		nvmem = &eeprom;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+	memory@80000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x1 0x0000000>;
+	};
+
+};
+
+&dspi0 {
+	status = "okay";
+};
+
+&dspi1 {
+	status = "okay";
+};
+
+&dspi2 {
+	status = "okay";
+};
+
+&esdhc {
+	status = "okay";
+};
+
+&esdhc1 {
+	status = "okay";
+	mmc-hs200-1_8v;
+	bus-width = <8>;
+};
+
+&fspi {
+	status = "okay";
+
+	mt35xu02g0: flash@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "jedec,spi-nor";
+		spi-max-frequency = <50000000>;
+		reg = <0>;
+		spi-rx-bus-width = <8>;
+		spi-tx-bus-width = <1>;
+	};
+};
+
+&i2c0 {
+	status = "okay";
+	u-boot,dm-pre-reloc;
+	eeprom: at24@50 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "atmel,24c32";
+		reg = <0x50>;
+		num-addresses = <8>;
+		address-width = <16>;
+		//pagesize = <128>;
+
+		eth0_addr: mac-address@40 {
+		    reg = <0x40 6>;
+		};
+		eth2_addr: mac-address1@48 {
+		    reg = <0x48 6>;
+		};
+        };
+};
+
+&i2c5 {
+	status = "okay";
+};
+
+
+&sata {
+	status = "okay";
+};
+&pcie1 {
+	status = "disabled";
+};
+
+&pcie2 {
+	status = "okay";
+};
+
+
+&duart0 {
+	status = "okay";
+};
+
+&duart1 {
+	status = "okay";
+};
+
+&usb1 {
+	status = "okay";
+};
+
+&usb0 {
+	status = "okay";
+};
+
+&mscc_felix {
+	status = "okay";
+};
+
+&mscc_felix_port0 {
+	label = "swp0";
+	managed = "in-band-status";
+	phy-handle = <&qsgmii_phy0>;
+	phy-mode = "qsgmii";
+	status = "okay";
+};
+
+&mscc_felix_port1 {
+	label = "swp1";
+	managed = "in-band-status";
+	phy-handle = <&qsgmii_phy1>;
+	phy-mode = "qsgmii";
+	status = "okay";
+};
+
+&mscc_felix_port2 {
+	label = "swp2";
+	managed = "in-band-status";
+	phy-handle = <&qsgmii_phy2>;
+	phy-mode = "qsgmii";
+	status = "okay";
+};
+
+&mscc_felix_port3 {
+	label = "swp3";
+	managed = "in-band-status";
+	phy-handle = <&qsgmii_phy3>;
+	phy-mode = "qsgmii";
+	status = "okay";
+};
+
+&mscc_felix_port4 {
+	ethernet = <&enetc_port2>;
+	status = "okay";
+};
+
+
+&enetc_mdio_pf3 {
+	sgmii_phy0: ethernet-phy@6 {
+		reg = <0x6>;
+	};
+
+	/* VSC8514 QSGMII quad PHY */
+	qsgmii_phy0: ethernet-phy@10 {
+		reg = <0x10>;
+	};
+
+	qsgmii_phy1: ethernet-phy@11 {
+		reg = <0x11>;
+	};
+
+	qsgmii_phy2: ethernet-phy@12 {
+		reg = <0x12>;
+	};
+
+	qsgmii_phy3: ethernet-phy@13 {
+		reg = <0x13>;
+	};
+};
+
+&enetc_port0 {
+	phy-handle = <&sgmii_phy0>;
+	phy-mode = "sgmii";
+	managed = "in-band-status";
+	status = "okay";
+	nvmem-cells = <&eth0_addr>;
+	nvmem-cell-names = "mac-address";
+};
+
+&enetc_port2 {
+	status = "okay";
+	nvmem-cells = <&eth2_addr>;
+	nvmem-cell-names = "mac-address";
+};
