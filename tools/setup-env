@@ -161,7 +161,7 @@ fi
 
 # Check the machine type specified
 valid_machine=false
-MACHINE="myd-j1028x"
+MACHINE="ls1028amyd"
 
 echo "Configuring for ${MACHINE} ..."
 LAYER_LIST=" \
