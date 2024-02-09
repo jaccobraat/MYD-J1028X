@@ -4,14 +4,14 @@ MYiR development board MYD-J1028X
 Lots of frustration getting SATA to work. 
 Changing RCW from 0x85bb to 0x85be was not enough.
 
-In AN43 M.2 Pinout Description and Reference Designs:
+In "AN43 M.2 Pinout Description and Reference Designs" :
 If the M.2 socket is used for a SATA based storage device, pin 43 must be connected
 to the negative signal of the differential pair used for SATA Rx.  
 
 i.e. PCIE0_RX+/PCIE0_RX- needs to be swapped for SATA  
 
-Found a solution for that in the QorIQ LS1028A Reference Manual  
-Control Register LNDGCR1 bit 31 RDAT_INV  
+Found a solution for that in the "QorIQ LS1028A Reference Manual"  
+Control Register LNDGCR1 bit 31 RDAT_INV: Invert Rx data. Has the same effect as swapping SD_RX[m]_P and SD_RX[m]_N.  
 Base address = 01EA0000h offset 8C4h   
 
 
