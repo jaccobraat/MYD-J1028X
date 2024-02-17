@@ -20,7 +20,7 @@
 # Add options for the script
 # Copyright (C) 2013 Freescale Semiconductor, Inc.
 
-PROGNAME="setup-env"
+PROGNAME="board-setup-env"
 
 if [ -z "$ZSH_NAME" ] && echo "$0" | grep -q "$PROGNAME"; then
     echo "ERROR: This script needs to be sourced."
