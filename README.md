@@ -1,7 +1,7 @@
 # MYD-J1028X
 MYiR development board MYD-J1028X
 
-# PROBLEM1: SATA
+## PROBLEM1: SATA
 Lots of frustration getting SATA to work. 
 Changing RCW from 0x85bb to 0x85be was not enough.
 
@@ -20,7 +20,7 @@ Added his to RCW:
 write 0x01ea08c4, 0x8445002a  
 .end  
 
-# PROBLEM2: Bluetooth
+## PROBLEM2: Bluetooth
 I can't get bluetooth to work on 1XL M.2 Wifi module with Murata chip.  
 Looking at the EVK Hardware User Guide it looks like a faulty design:
 Pin 22 om M.2 slot is connected to UARTA_TX on the board and BT_UART_TXD on the Wifi module 
