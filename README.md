@@ -23,6 +23,7 @@ write 0x01ea08c4, 0x8445002a
 ## PROBLEM2: Bluetooth
 I can't get bluetooth to work on 1XL M.2 Wifi module with Murata chip.  
 Looking at the EVK Hardware User Guide it looks like a faulty design:  
+<<<<<<< HEAD
 Pin 22 om M.2 slot is connected to UARTA_TX on the board and BT_UART_TXD on the Wifi module   
 Pin 32 om M.2 slot is connected to UARTA_RX on the board and BT_UART_RXD on the Wifi module   
 
@@ -30,6 +31,15 @@ Pin 32 om M.2 slot is connected to UARTA_RX on the board and BT_UART_RXD on the 
 
 
 ## MAC addresses
+=======
+Pin 22 om M.2 slot is connected to UARTA_TX on the board and BT_UART_TXD on the Wifi module 
+Pin 32 om M.2 slot is connected to UARTA_RX on the board and BT_UART_RXD on the Wifi module 
+
+
+
+## OTHER
+### u-boot device tree
+>>>>>>> 1ab8f7c561c50cdd5d22e170f0799b5859514dbf
 Read MAC addresses from eeprom offset 0x40 and 0x48
 
 => i2c md 50 0.2  64   
