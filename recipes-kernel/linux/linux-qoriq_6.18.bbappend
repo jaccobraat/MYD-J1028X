@@ -10,4 +10,4 @@ do_move_dts_files() {
         cp -vr ${UNPACKDIR}/arch ${STAGING_KERNEL_DIR}
 }
 
-do_kernel_checkout[postfuncs]+="do_move_dts_files"
+do_kernel_checkout[postfuncs] += "do_move_dts_files"
