@@ -312,14 +312,14 @@ EOF
 
 
 cat >>conf/local.conf <<-EOF
-PREFERRED_VERSION_weston:ls1028a = "11.0.2.imx"
-PREFERRED_VERSION_wayland-protocols:ls1028a = "1.32.imx"
-PREFERRED_VERSION_libdrm:ls1028a = "2.4.115.imx"
-PREFERRED_PROVIDER_virtual/libgl:ls1028a  = "imx-gpu-viv"
-PREFERRED_PROVIDER_virtual/libgles1:ls1028a = "imx-gpu-viv"
-PREFERRED_PROVIDER_virtual/libgles2:ls1028a = "imx-gpu-viv"
-PREFERRED_PROVIDER_virtual/egl:ls1028a      = "imx-gpu-viv"
-PREFERRED_PROVIDER_virtual/opencl-icd:ls1028a = "imx-gpu-viv"
+#PREFERRED_VERSION_weston:ls1028a = "11.0.2.imx"
+#PREFERRED_VERSION_wayland-protocols:ls1028a = "1.47.imx"
+#PREFERRED_VERSION_libdrm:ls1028a = "2.4.131.imx"
+#PREFERRED_PROVIDER_virtual/libgl:ls1028a  = "imx-gpu-viv"
+#PREFERRED_PROVIDER_virtual/libgles1:ls1028a = "imx-gpu-viv"
+#PREFERRED_PROVIDER_virtual/libgles2:ls1028a = "imx-gpu-viv"
+#PREFERRED_PROVIDER_virtual/egl:ls1028a      = "imx-gpu-viv"
+#PREFERRED_PROVIDER_virtual/opencl-icd:ls1028a = "imx-gpu-viv"
 
 # Some gstream plugins require "commercial" be set in LICENSE_FLAGS_ACCEPTED
 # For exmaple, gstreamer1.0-plugins-ugly-asf/gstreamer1.0-libav
@@ -340,6 +340,12 @@ PACKAGE_CLASSES = "package_rpm"
 #    echo "P4sSw0rD" | openssl passwd -stdin).
 #    If empty or missing, they'll get an empty password.
 #    'shell' is the default shell (if empty, default is /bin/sh).    
+
+DISTRO_FEATURES:append = " wifi iw"
+MACHINE_FEATURES:append = "pci wifi bluetooth bcm43455 bcm4356 nxp8997-pcie nxp8997-sdio nxp9098-pcie nxp9098-sdio"
+IMAGE_INSTALL:append = " hostapd wpa-supplicant kernel-modules"
+
+DISTRO_FEATURES:remove = " ptest"
 
  
 
