@@ -151,6 +151,8 @@ MACHINE="ls1028amyd"
 
 echo "Configuring for ${MACHINE} ..."
 LAYER_LIST=" \
+    meta-yocto/meta-poky  \
+    meta-yocto/meta-yocto-bsp \
     meta-openembedded/meta-oe \
     meta-openembedded/meta-multimedia \
     meta-openembedded/meta-python \
