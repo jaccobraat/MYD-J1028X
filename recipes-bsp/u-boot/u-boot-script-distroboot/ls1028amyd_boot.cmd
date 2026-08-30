@@ -1,4 +1,4 @@
-env exists dtb || setenv dtb fsl-ls1028a-myd.dtb;
+env exists dtb || setenv dtb fsl-ls1028a-myd-ls1028amyd.dtb;
 env exists kernel_image || setenv kernel_image Image;
 env exists devpart_boot || setenv devpart_boot 1;
 env exists devpart_root || setenv devpart_root 2;

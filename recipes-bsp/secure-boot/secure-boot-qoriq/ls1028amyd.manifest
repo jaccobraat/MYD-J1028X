@@ -18,8 +18,8 @@ dp_firmware=dp/ls1028a-dp-fw.bin
 
 # [linux, dtb, rfs]
 kernel_img=Image
-device_tree=fsl-ls1028a-myd.dtb
-kernel_itb=kernel-fsl-ls1028a-myd.itb
+device_tree=fsl-ls1028a-myd-ls1028amyd.dtb
+kernel_itb=kernel-fsl-ls1028a-myd-ls1028amyd.itb
 
 # [distro autoboot script]
 distro_bootscript=ls1028ardb_boot.scr
@@ -37,7 +37,7 @@ securevalidate_fix="setenv secureboot_validate 'load \$devtype \$devnum:\$devpar
 securevalidate_enforce="setenv secureboot_validate 'load \$devtype \$devnum:\$devpart_boot \$kernelheader_addr_r /secboot_hdrs/ls1028ardb/hdr_linux.out; esbc_validate \$kernelheader_addr_r;load \$devtype \$devnum:\$devpart_boot \$fdtheader_addr_r /secboot_hdrs/ls1028ardb/hdr_dtb.out; esbc_validate \$fdtheader_addr_r; load \$devtype \$devnum:\$devpart_boot \$initramfsheader_addr_r /secboot_hdrs/ls1028ardb/hdr_initramfs.out; esbc_validate \$initramfsheader_addr_r; ' setenv othbootargs 'ima_tcb ima_appraise=enforce ima_appraise_tcb enforcing=1 '"
 
 distroboot=\
-'env exists dtb || setenv dtb fsl-ls1028a-myd.dtb;'\
+'env exists dtb || setenv dtb fsl-ls1028a-myd-ls1028amyd.dtb;'\
 'env exists kernel_image || setenv kernel_image Image;'\
 'env exists devpart_boot || setenv devpart_boot 1;'\
 'env exists devpart_root || setenv devpart_root 4;'\
@@ -49,7 +49,7 @@ distroboot=\
 'booti $kernel_addr_r - $fdt_addr_r'
 
 distroboot_ima=\
-'env exists dtb || setenv dtb fsl-ls1028a-myd.dtb;'\
+'env exists dtb || setenv dtb fsl-ls1028a-myd-ls1028amyd.dtb;'\
 'env exists kernel_image || setenv kernel_image Image;'\
 'env exists devpart_boot || setenv devpart_boot 1;'\
 'env exists devpart_root || setenv devpart_root 4;'\
