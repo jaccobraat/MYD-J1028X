@@ -53,7 +53,7 @@ done
 generate_boottgz(){
     . $MACHINE.manifest
 
-    find $img_dir/*.dtb -type l | xargs -i cp {} $boot_dir
+    find $img_dir/*.dtb -type f | xargs -i cp {} $boot_dir
 
     find $img_dir/module* -type l | xargs -i tar -xvf {} -C $boot_dir
     mv $boot_dir/lib/* $boot_dir/
