@@ -265,6 +265,10 @@
 };
 
 &enetc_mdio_pf3 {
+	sgmii_phy0: ethernet-phy@2 {
+		reg = <0x2>;
+	};
+
 	/* VSC8514 QSGMII quad PHY */
 	qsgmii_phy0: ethernet-phy@10 {
 		reg = <0x10>;
@@ -290,13 +294,13 @@
 	status = "okay";
 
 
-	mdio {
-		#address-cells = <1>;
-		#size-cells = <0>;
-		sgmii_phy0: ethernet-phy@6 {
-			reg = <0x6>;
-		};
-	};
+	// mdio {
+	// 	#address-cells = <1>;
+	// 	#size-cells = <0>;
+	// 	sgmii_phy0: ethernet-phy@6 {
+	// 		reg = <0x6>;
+	// 	};
+	// };
 };
 
 &enetc_port2 {
