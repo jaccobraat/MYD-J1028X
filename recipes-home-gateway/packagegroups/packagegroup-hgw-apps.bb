@@ -6,3 +6,4 @@ PACKAGES = "${PN}"
 RDEPENDS:${PN} = " \
     bluez5 \
     mosquitto \
+"

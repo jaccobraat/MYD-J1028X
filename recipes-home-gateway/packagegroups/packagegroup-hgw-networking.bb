@@ -8,9 +8,9 @@ RDEPENDS:${PN} = " \
     ntp sntp \
     resolvconf \
     wget \
-    net-tools\
-    tcpdump\
-   bridge-utils \
+    net-tools \
+    tcpdump \
+    bridge-utils \
     ethtool \
     iproute2 \
     iproute2-bridge \
@@ -27,5 +27,4 @@ RDEPENDS:${PN} = " \
     inetutils-telnet \
     inetutils-traceroute \
     netcat \
-
 "
