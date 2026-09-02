@@ -7,4 +7,5 @@ RDEPENDS:${PN} = " \
     grep \
     sudo \
     gzip \
+    parted \
 "

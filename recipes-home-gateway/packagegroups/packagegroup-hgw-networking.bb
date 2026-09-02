@@ -28,4 +28,5 @@ RDEPENDS:${PN} = " \
     netcat \
     fping \
     dnsmasq \
+    freeradius \
 "
