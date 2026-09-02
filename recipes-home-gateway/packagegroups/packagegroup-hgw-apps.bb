@@ -4,7 +4,5 @@ inherit packagegroup
 PACKAGES = "${PN}"
 
 RDEPENDS:${PN} = " \
-    bluez  \
+    bluez5 \
     mosquitto \
-
-"
