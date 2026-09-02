@@ -6,7 +6,6 @@ PACKAGES = "${PN}"
 RDEPENDS:${PN} = " \
     curl \
     ntp sntp \
-    resolvconf \
     wget \
     net-tools \
     tcpdump \
@@ -27,4 +26,6 @@ RDEPENDS:${PN} = " \
     inetutils-telnet \
     inetutils-traceroute \
     netcat \
+    fping \
+    dnsmasq \
 "
