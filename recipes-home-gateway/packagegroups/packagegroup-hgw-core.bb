@@ -8,4 +8,5 @@ RDEPENDS:${PN} = " \
     sudo \
     gzip \
     parted \
+    man \
 "
