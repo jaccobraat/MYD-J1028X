@@ -2,12 +2,10 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI:append = " \
 	file://arch/arm64/boot/dts/freescale/fsl-ls1028a-myd-dpdk.dts \
 	file://arch/arm64/boot/dts/freescale/fsl-ls1028a-myd.dts \
+    file://arch/arm64/configs/lsdk.config \
 	file://fragment.cfg \
 "
 
-/*
-file://arch/arm64/configs/lsdk.config \
-*/
 
 DELTA_KERNEL_DEFCONFIG += " fragment.cfg"
 
