@@ -5,7 +5,9 @@ SRC_URI:append = " \
 	file://fragment.cfg \
 "
 
-#	file://arch/arm64/configs/lsdk.config \
+/*
+file://arch/arm64/configs/lsdk.config \
+*/
 
 DELTA_KERNEL_DEFCONFIG += " fragment.cfg"
 
