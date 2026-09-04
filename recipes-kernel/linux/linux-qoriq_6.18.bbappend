@@ -9,7 +9,9 @@ SRC_URI:append = " \
 do_move_dts_files() {
         bbwarn "copy files:${UNPACKDIR}/arch ${STAGING_KERNEL_DIR}" 
         cp -vr ${UNPACKDIR}/arch ${STAGING_KERNEL_DIR}
+}
+do_move_extra_kernel_config_file() {
 		cp ${UNPACKDIR}/lsdk.config ${STAGING_KERNEL_DIR}
 }
 
-do_kernel_checkout[postfuncs] += "do_move_dts_files"
+do_kernel_checkout[postfuncs] += "do_move_dts_files do_move_extra_kernel_config_file"
