@@ -8,4 +8,7 @@ RDEPENDS:${PN} = " \
     libvirt-libvirtd \
     libvirt-virsh \
     lxc \
+    qemu \
 "
+
+PREFERRED_RPROVIDER_qemu = "qemu-qoriq" 
