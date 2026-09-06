@@ -8,6 +8,5 @@ RDEPENDS:${PN} = " \
     libvirt-libvirtd \
     libvirt-virsh \
     lxc \
-    qemu \
 "
 
