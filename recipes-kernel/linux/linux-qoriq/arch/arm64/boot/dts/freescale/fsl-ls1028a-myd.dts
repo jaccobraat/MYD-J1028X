@@ -357,8 +357,8 @@
 
 
 &pcie1{
-    //status = "disabled"; 
-	status = "okay";
+    status = "disabled"; 
+	//status = "okay";
 
 	reset-gpios = <&gpio3 6 GPIO_ACTIVE_HIGH>;
 
