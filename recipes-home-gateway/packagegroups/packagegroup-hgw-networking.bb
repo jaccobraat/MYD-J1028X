@@ -29,4 +29,5 @@ RDEPENDS:${PN} = " \
     fping \
     dnsmasq \
     freeradius \
+    firewalld \
 "
