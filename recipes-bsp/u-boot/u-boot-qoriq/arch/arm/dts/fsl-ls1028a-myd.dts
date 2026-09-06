@@ -33,7 +33,7 @@
 	chosen {
 		stdout-path = "serial0:115200n8";
 	};
-	memory@80000000 {
+	memory@80000000 { 
 		device_type = "memory";
 		reg = <0x0 0x80000000 0x1 0x0000000>;
 	};
@@ -112,8 +112,10 @@
 
 &pcie2 {
 	status = "okay";
-	iommu-map = <0x101 &smmu 0x101 0x001>;
-	msi-map =  <0x101 &its 0x101 0x001>;
+    iommu-map = <0x0100 &smmu 0x10 0x20>;
+    iommu-map-mask = <0xffff>;
+	    msi-map = <0x0100 &its 0x10 0x20>;
+    msi-map-mask = <0xffff>;
 };
 
 &duart0 {
