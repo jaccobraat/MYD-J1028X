@@ -11,4 +11,3 @@ RDEPENDS:${PN} = " \
     qemu \
 "
 
-PREFERRED_RPROVIDER_qemu = "qemu-qoriq" 
