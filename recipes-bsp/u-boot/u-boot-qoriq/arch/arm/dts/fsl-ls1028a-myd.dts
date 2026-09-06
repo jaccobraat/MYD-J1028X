@@ -112,6 +112,7 @@
 
 &pcie2 {
 	status = "okay";
+	iommu-map = <0 &smmu 0 1>, <0x101 &smmu 0x101 0x001>;
 };
 
 
