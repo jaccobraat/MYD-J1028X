@@ -112,6 +112,8 @@
 
 &pcie2 {
 	status = "okay";
+	iommu-map = <0x101 &smmu 0x101 0x001>;
+	msi-map =  <0x101 &its 0x101 0x001>;
 };
 
 &duart0 {
