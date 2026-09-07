@@ -355,10 +355,6 @@
 	status = "okay";
 };
 
-&rcec{
-	pci-iommu-extra = "2.0x1f.0,vfs=2";
-};
-
 &pcie1{
     status = "disabled"; 
 	//status = "okay";
