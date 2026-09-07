@@ -365,7 +365,7 @@
 &pcie2{
         status = "okay";
 
-	pci-iommu-extra = "1.0.0,vfs=2";
+	pci-iommu-extra = "1.0.0,vfs=3,1.0.1,vfs=3";
 	reset-gpios = <&gpio3 17 GPIO_ACTIVE_HIGH>;
 };
 
