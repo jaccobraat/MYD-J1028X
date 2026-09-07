@@ -112,6 +112,7 @@
 
 &pcie2 {
 	status = "okay";
+	pci-iommu-extra = "1.0.0,vfs=3,1.0.1,vfs=3";
 };
 
 &duart0 {
