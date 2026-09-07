@@ -355,6 +355,9 @@
 	status = "okay";
 };
 
+&rcec{
+	pci-iommu-extra = "2.0x1f.0,vfs=2";
+};
 
 &pcie1{
     status = "disabled"; 
@@ -366,11 +369,8 @@
 &pcie2{
         status = "okay";
 
+	pci-iommu-extra = "1.0.0,vfs=2";
 	reset-gpios = <&gpio3 17 GPIO_ACTIVE_HIGH>;
-    iommu-map = <0x0100 &smmu 0x10 0x20>;
-    iommu-map-mask = <0xffff>;
-	    msi-map = <0x0100 &its 0x10 0x20>;
-    msi-map-mask = <0xffff>;
 };
 
 &pwm0 {
