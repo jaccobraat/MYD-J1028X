@@ -111,8 +111,7 @@
 };
 
 &pcie2 {
-    status = "disabled";
-	//status = "okay";
+	status = "okay";
 };
 
 &duart0 {
