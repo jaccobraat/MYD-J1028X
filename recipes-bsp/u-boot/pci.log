@@ -1,0 +1,11 @@
+=> pci
+BusDevFun  VendorId   DeviceId   Device Class       Sub-Class
+_____________________________________________________________
+00.00.00   0x1957     0x82c1     Bridge device           0x04
+01.00.00   0x1b4b     0x2b43     Network controller      0x00
+02.00.00   0x1957     0xe100     Network controller      0x00
+02.00.02   0x1957     0xe100     Network controller      0x00
+02.00.03   0x1957     0xee01     Base system peripheral  0x80
+02.00.04   0x1957     0xee02     Base system peripheral  0x80
+02.00.05   0x1957     0xeef0     Network controller      0x08
+02.1f.00   0x1957     0xe001     Base system peripheral  0x07
