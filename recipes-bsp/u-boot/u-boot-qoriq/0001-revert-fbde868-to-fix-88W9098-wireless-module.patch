@@ -2,6 +2,7 @@ From c3385e8dfc8e2a90bb2c5f8bd3bfe9d9b8d54cf9 Mon Sep 17 00:00:00 2001
 From: Jacco <jacco.braat@gmail.com>
 Date: Wed, 9 Sep 2026 19:39:44 +0200
 Subject: [PATCH] revert fbde868 to fix 88W9098 wireless module
+Upstream-Status: Inappropriate [oe specific]
 
 ---
  drivers/pci/pci-uclass.c | 2 ++
