@@ -9,3 +9,116 @@ _____________________________________________________________
 02.00.04   0x1957     0xee02     Base system peripheral  0x80
 02.00.05   0x1957     0xeef0     Network controller      0x08
 02.1f.00   0x1957     0xe001     Base system peripheral  0x07
+
+CIe2: pcie@3500000 Root Complex: x1 gen2
+pci_uclass_post_probe: probing bus 0
+pci_bind_bus_devices: bus 0/pcie@3500000: found device 0, function 0: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1957, device=82c1
+pci_find_and_bind_driver: No match found: bound generic driver instead
+pci_auto_config_devices: start
+pci_auto_config_devices: device pci_0:0.0
+dm_pci_hose_probe_bus
+pci_get_bus_max: ret=0
+dm_pci_hose_probe_bus: bus = 1/pci_0:0.0
+pci_uclass_pre_probe, bus=-1/pci_0:0.0, parent=pcie@3500000
+pci_uclass_post_probe: probing bus 1
+pci_bind_bus_devices: bus 1/pci_0:0.0: found device 0, function 0: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1b4b, device=2b43
+pci_find_and_bind_driver: No match found: bound generic driver instead
+=>  if (only_one_child(bus) && (PCI_MASK_BUS(bdf) > 0)) would call continue
+pci_bind_bus_devices: bus 1/pci_0:0.0: found device 0, function 1: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1b4b, device=2b44
+pci_find_and_bind_driver: No match found: bound generic driver instead
+pci_auto_config_devices: device pci_1:0.0
+pci_auto_config_devices: device pci_1:0.1
+pci_auto_config_devices: done
+pci_get_bus_max: ret=1
+pci_auto_config_devices: done
+
+
+==> debug log from pci-uclass.c
+Using SERDES1 Protocol: 60248 (0xeb58)
+PCIe2: pcie@3500000 Root Complex: x1 gen2
+pci_uclass_post_probe: probing bus 0
+pci_bind_bus_devices: bus 0/pcie@3500000: found device 0, function 0: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1957, device=82c1
+pci_find_and_bind_driver: No match found: bound generic driver instead
+pci_auto_config_devices: start
+pci_auto_config_devices: device pci_0:0.0
+dm_pci_hose_probe_bus
+pci_get_bus_max: ret=0
+dm_pci_hose_probe_bus: bus = 1/pci_0:0.0
+pci_uclass_pre_probe, bus=-1/pci_0:0.0, parent=pcie@3500000
+pci_uclass_post_probe: probing bus 1
+
+only_one_child: bus=1, pcie_type=4  
+==> (only_one_child(bus) && (PCI_MASK_BUS(bdf) > 0)) == false
+pci_bind_bus_devices: bus 1/pci_0:0.0: found device 0, function 0: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1b4b, device=2b43
+pci_find_and_bind_driver: No match found: bound generic driver instead
+
+only_one_child: bus=1, pcie_type=4
+==>  (only_one_child(bus) && (PCI_MASK_BUS(bdf) > 0)) == true and function 1 device would be skipped
+pci_bind_bus_devices: bus 1/pci_0:0.0: found device 0, function 1: find ret=-19
+pci_find_and_bind_driver: Searching for driver: vendor=1b4b, device=2b44
+pci_find_and_bind_driver: No match found: bound generic driver instead
+
+
+=> pci 1 long
+Scanning PCI devices on bus 1
+
+Found PCI device 01.00.00:
+  vendor ID =                   0x1b4b
+  device ID =                   0x2b43
+  command register ID =         0x0006
+  status register =             0x0010
+  revision ID =                 0x03
+  class code =                  0x02 (Network controller)
+  sub class code =              0x00
+  programming interface =       0x00
+  cache line =                  0x08
+  latency time =                0x00
+  header type =                 0x80
+  BIST =                        0x00
+  base address 0 =              0x4000000c
+  base address 1 =              0x00000000
+  base address 2 =              0x4010000c
+  base address 3 =              0x00000000
+  base address 4 =              0x4012000c
+  base address 5 =              0x00000000
+  cardBus CIS pointer =         0x00000000
+  sub system vendor ID =        0x1b4b
+  sub system ID =               0x2b43
+  expansion ROM base address =  0x00000000
+  interrupt line =              0xff
+  interrupt pin =               0x01
+  min Grant =                   0x00
+  max Latency =                 0x00
+
+Found PCI device 01.00.01:
+  vendor ID =                   0x1b4b
+  device ID =                   0x2b44
+  command register ID =         0x0006
+  status register =             0x0010
+  revision ID =                 0x03
+  class code =                  0x02 (Network controller)
+  sub class code =              0x00
+  programming interface =       0x00
+  cache line =                  0x08
+  latency time =                0x00
+  header type =                 0x80
+  BIST =                        0x00
+  base address 0 =              0x4020000c
+  base address 1 =              0x00000000
+  base address 2 =              0x40300004
+  base address 3 =              0x00000000
+  base address 4 =              0x4032000c
+  base address 5 =              0x00000000
+  cardBus CIS pointer =         0x00000000
+  sub system vendor ID =        0x1b4b
+  sub system ID =               0x2b44
+  expansion ROM base address =  0x00000000
+  interrupt line =              0xff
+  interrupt pin =               0x02
+  min Grant =                   0x00
+  max Latency =                 0x00
