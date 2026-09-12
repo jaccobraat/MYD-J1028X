@@ -29,4 +29,5 @@ RDEPENDS:${PN} = " \
     dnsmasq \
     freeradius \
     nftables \
+    transmission \
 "
