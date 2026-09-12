@@ -14,7 +14,6 @@ RDEPENDS:${PN} = " \
     iproute2 \
     iproute2-bridge \
     iproute2-tc \
-    iptables \
     iputils \
     inetutils \
     inetutils-hostname \
@@ -29,5 +28,6 @@ RDEPENDS:${PN} = " \
     fping \
     dnsmasq \
     freeradius \
-    firewalld \
+    nftables \
+    transmission-daemon \
 "

@@ -6,4 +6,7 @@ PACKAGES = "${PN}"
 RDEPENDS:${PN} = " \
     bluez5 \
     mosquitto \
+    apt \
+    cargo \
+    rust \
 "
